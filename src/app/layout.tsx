@@ -14,45 +14,79 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// New, comprehensive metadata based on user's prompt
 export const metadata: Metadata = {
-  title: "Valaithalam | Custom Web Development & Social Media Management",
-  description: "Partner with Valaithalam for expert full-stack development, high-performance web applications, and results-driven social media management. Let's build your digital success.",
+  title: "Valaithalam — Empowering Future Innovators & Leaders in Tamil Nadu",
+  description: "Valaithalam is a youth innovation and leadership ecosystem from Tamil Nadu empowering students with research, technology skilling, startup mentorship, and real-world projects. We are building the next generation of innovators, technocrats, and leaders in India.",
+  keywords: ["Valaithalam", "youth innovation Tamil Nadu", "student leadership ecosystem", "student research Tamil Nadu", "Salem innovation community", "tech skilling for students", "youth entrepreneurship programs India", "campus innovation forum", "Tamil Nadu student ecosystem"],
+  authors: [{ name: "Valaithalam" }],
+  themeColor: "#0D1B2A",
+  alternates: {
+    canonical: 'https://valaithalam.org/',
+  },
   openGraph: {
-    title: "Valaithalam | Custom Web Development & Social Media Management",
-    description: "Partner with Valaithalam for expert full-stack development, high-performance web applications, and results-driven social media management. Let's build your digital success.",
-    url: 'https://valaithalam.site', // Placeholder URL
+    title: "Valaithalam — Empowering Future Innovators & Leaders in Tamil Nadu",
+    description: "Youth innovation & leadership ecosystem empowering students in Tamil Nadu through research, tech training & startup mentorship.",
+    url: 'https://valaithalam.org/',
     siteName: 'Valaithalam',
     images: [
       {
-        url: 'https://valaithalam.site/og-image.png', // Placeholder image
+        url: 'https://valaithalam.org/og-image.png',
         width: 1200,
         height: 630,
       },
     ],
-    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Valaithalam | Custom Web Development & Social Media Management",
-    description: "Partner with Valaithalam for expert full-stack development, high-performance web applications, and results-driven social media management. Let's build your digital success.",
-    images: ['https://valaithalam.site/twitter-image.png'], // Placeholder image
+    title: "Valaithalam — Future Innovators of Tamil Nadu",
+    description: "Shaping the next generation of innovators & leaders through research, tech skilling & entrepreneurship programs.",
+    images: ['https://valaithalam.org/og-image.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 };
 
-const jsonLd = {
+// JSON-LD Schemas
+const jsonLdOrganization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Valaithalam',
-  url: 'https://valaithalam.site', // Placeholder URL
-  logo: 'https://valaithalam.site/logo.png', // Placeholder URL
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+1-555-123-4567',
-    contactType: 'Customer Service',
+  url: 'https://valaithalam.org/',
+  logo: 'https://valaithalam.org/logo.png',
+  description: 'Youth-driven innovation and leadership ecosystem in Tamil Nadu.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Salem',
+    addressRegion: 'Tamil Nadu',
+    postalCode: '636010',
+    addressCountry: 'IN',
   },
+  contactPoint: [{
+    '@type': 'ContactPoint',
+    contactType: 'support',
+    email: 'contact@valaithalam.org',
+  }],
+  sameAs: [
+    'https://www.linkedin.com/company/valaithalam/',
+    'https://www.instagram.com/valaithalam/',
+  ],
 };
 
+const jsonLdBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://valaithalam.org/',
+    },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -61,11 +95,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+        />
+      </head>
+      <body>
         <div className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
           <Navbar />
           <main className="flex-grow">{children}</main>
