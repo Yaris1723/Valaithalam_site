@@ -5,22 +5,25 @@ const projects = [
     title: 'E-commerce Platform',
     description: 'A full-featured online store with a custom CMS and payment gateway integration.',
     category: 'Web Application',
+    tech: ['Next.js', 'Stripe', 'Vercel'],
   },
   {
     title: 'Corporate Branding',
     description: 'A complete social media and brand identity overhaul for a B2B tech company.',
     category: 'Social Media',
+    tech: ['Figma', 'Content Strategy'],
   },
   {
     title: 'SaaS Dashboard',
     description: 'A complex data visualization and management dashboard for a financial services client.',
     category: 'Full-Stack Development',
+    tech: ['React', 'Node.js', 'AWS'],
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">Our Work</h2>
@@ -38,6 +41,13 @@ const Portfolio = () => {
               <div className="p-6 bg-white">
                 <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
                 <p className="mt-2 text-base text-gray-600">{project.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((tag) => (
+                    <span key={tag} className="inline-block bg-secondary text-primary text-xs font-medium px-2.5 py-1 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Valaithalam | Expert Web & Social Media Solutions",
-  description: "Providing full-stack development, web application solutions, and expert social media management to elevate your business.",
+  title: "Valaithalam | Custom Web Development & Social Media Management",
+  description: "Partner with Valaithalam for expert full-stack development, high-performance web applications, and results-driven social media management. Let's build your digital success.",
 };
 
 export default function RootLayout({

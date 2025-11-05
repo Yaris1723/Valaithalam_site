@@ -41,12 +41,12 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-secondary" id="contact">
+    <section className="py-24 bg-secondary" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900">Get in Touch</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900">Let's Discuss Your Project.</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
-            Have a project in mind? We'd love to hear from you.
+            Ready to build something great? Reach out to our team. We are committed to responding within one business day.
           </p>
         </div>
         <div className="mt-12 grid md:grid-cols-2 gap-12 items-start">
@@ -81,7 +81,7 @@ const ContactForm = () => {
           <div className="text-gray-900">
             <h3 className="text-2xl font-bold">Contact Information</h3>
             <p className="mt-4 text-lg text-gray-600">
-              You can also reach us via the details below. We typically respond within 24 hours.
+              You can also reach us via the details below. We are committed to responding within one business day.
             </p>
             <div className="mt-6 space-y-4">
               <p className="flex items-center">
