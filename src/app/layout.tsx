@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 
 // New viewport export for themeColor
 export const viewport = {
-  themeColor: "#0D1B2A",
+  themeColor: "#125093ff",
 };
 
 // JSON-LD Schemas
