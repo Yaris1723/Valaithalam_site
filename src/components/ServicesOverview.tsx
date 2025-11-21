@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Code, Globe, Users } from "lucide-react";
+import GradualBlur from "@/components/ui/GradualBlur";
 
 const services = [
   {
@@ -23,7 +24,7 @@ const services = [
 
 const ServicesOverview = () => {
   return (
-    <section className="section-spacing bg-gradient-to-b from-white to-neutral-50">
+    <section className="section-spacing bg-gradient-to-b from-white to-neutral-50 relative" style={{ position: 'relative', overflow: 'hidden' }}>
       <div className="max-w-7xl mx-auto container-padding">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -82,6 +83,17 @@ const ServicesOverview = () => {
           })}
         </div>
       </div>
+
+      {/* Gradual Blur Effect at Bottom */}
+      <GradualBlur
+        target="parent"
+        position="bottom"
+        height="6rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        opacity={0.85}
+      />
     </section>
   );
 };

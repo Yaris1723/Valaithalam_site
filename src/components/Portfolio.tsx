@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import GradualBlur from "@/components/ui/GradualBlur";
 
 const projects = [
   {
@@ -44,7 +45,7 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section className="section-spacing bg-white">
+    <section className="section-spacing bg-white relative" style={{ position: 'relative', overflow: 'hidden' }}>
       <div className="max-w-7xl mx-auto container-padding">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -124,6 +125,18 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+
+      {/* Gradual Blur Effect at Bottom */}
+      <GradualBlur
+        target="parent"
+        position="bottom"
+        height="8rem"
+        strength={2.5}
+        divCount={6}
+        curve="bezier"
+        exponential={true}
+        opacity={0.9}
+      />
     </section>
   );
 };
