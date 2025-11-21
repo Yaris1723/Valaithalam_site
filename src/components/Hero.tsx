@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Code, Briefcase, FolderOpen, Mail, Sparkles } from 'lucide-react';
+import SpotlightCard from '@/components/ui/SpotlightCard';
 
 const Hero = () => {
   const pageCards = [
@@ -83,36 +84,40 @@ const Hero = () => {
               <Link
                 key={card.title}
                 href={card.link}
-                className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border border-neutral-100 hover:border-transparent transition-all duration-500 hover:-translate-y-2"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${0.8 + index * 0.1}s forwards`,
                   opacity: 0,
                   animationFillMode: 'forwards'
                 }}
               >
-                {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                <SpotlightCard
+                  className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border border-neutral-100 hover:border-transparent transition-all duration-500 hover:-translate-y-2"
+                  spotlightColor="rgba(0, 123, 255, 0.15)"
+                >
+                  {/* Gradient overlay on hover */}
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
-                <div className="relative">
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-6 h-6" />
+                  <div className="relative">
+                    {/* Icon */}
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                      {card.title}
+                    </h3>
+                    <p className="text-neutral-600 text-sm leading-relaxed mb-4">
+                      {card.description}
+                    </p>
+
+                    {/* Arrow */}
+                    <div className="flex items-center text-primary font-semibold text-sm">
+                      <span>Explore</span>
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors duration-300">
-                    {card.title}
-                  </h3>
-                  <p className="text-neutral-600 text-sm leading-relaxed mb-4">
-                    {card.description}
-                  </p>
-
-                  {/* Arrow */}
-                  <div className="flex items-center text-primary font-semibold text-sm">
-                    <span>Explore</span>
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
+                </SpotlightCard>
               </Link>
             );
           })}

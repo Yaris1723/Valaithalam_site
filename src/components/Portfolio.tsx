@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import GradualBlur from "@/components/ui/GradualBlur";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const projects = [
   {
@@ -63,9 +64,10 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <SpotlightCard
               key={project.title}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-100"
+              spotlightColor="rgba(0, 123, 255, 0.18)"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`,
                 opacity: 0,
@@ -121,7 +123,7 @@ const Portfolio = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

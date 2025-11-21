@@ -3,6 +3,7 @@
 import React from "react";
 import { Code, Globe, Users } from "lucide-react";
 import GradualBlur from "@/components/ui/GradualBlur";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const services = [
   {
@@ -44,9 +45,10 @@ const ServicesOverview = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div
+              <SpotlightCard
                 key={service.name}
-                className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-100"
+                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-100"
+                spotlightColor="rgba(0, 123, 255, 0.2)"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`,
                   opacity: 0,
@@ -78,7 +80,7 @@ const ServicesOverview = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>

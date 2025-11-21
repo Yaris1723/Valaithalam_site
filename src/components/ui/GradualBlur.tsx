@@ -88,7 +88,7 @@ const useResponsiveDimension = (responsive: boolean, config: any, key: string) =
     return responsive ? val : config[key];
 };
 
-const useIntersectionObserver = (ref: React.RefObject<HTMLDivElement>, shouldObserve = false) => {
+const useIntersectionObserver = (ref: React.RefObject<HTMLDivElement | null>, shouldObserve = false) => {
     const [isVisible, setIsVisible] = useState(!shouldObserve);
 
     useEffect(() => {
@@ -152,14 +152,14 @@ const GradualBlur: React.FC<GradualBlurProps> = (props) => {
 
             let blurValue;
             if (config.exponential) {
-                blurValue = math.pow(2, progress * 4) * 0.0625 * currentStrength;
+                blurValue = Number(math.pow(2, progress * 4)) * 0.0625 * currentStrength;
             } else {
                 blurValue = 0.0625 * (progress * config.divCount + 1) * currentStrength;
             }
-            const p1 = math.round((increment * i - increment) * 10) / 10;
-            const p2 = math.round(increment * i * 10) / 10;
-            const p3 = math.round((increment * i + increment) * 10) / 10;
-            const p4 = math.round((increment * i + increment * 2) * 10) / 10;
+            const p1 = Number(math.round((increment * i - increment) * 10)) / 10;
+            const p2 = Number(math.round(increment * i * 10)) / 10;
+            const p3 = Number(math.round((increment * i + increment) * 10)) / 10;
+            const p4 = Number(math.round((increment * i + increment * 2) * 10)) / 10;
             let gradient = `transparent ${p1}%, black ${p2}%`;
             if (p3 <= 100) gradient += `, black ${p3}%`;
             if (p4 <= 100) gradient += `, transparent ${p4}%`;
@@ -191,7 +191,7 @@ const GradualBlur: React.FC<GradualBlurProps> = (props) => {
         const isHorizontal = ['left', 'right'].includes(config.position);
         const isPageTarget = config.target === 'page';
 
-        const baseStyle: React.CSSProperties = {
+        const baseStyle: any = {
             position: isPageTarget ? 'fixed' : 'absolute',
             pointerEvents: config.hoverIntensity ? 'auto' : 'none',
             opacity: isVisible ? 1 : 0,
@@ -214,7 +214,7 @@ const GradualBlur: React.FC<GradualBlurProps> = (props) => {
             baseStyle.bottom = 0;
         }
 
-        return baseStyle;
+        return baseStyle as React.CSSProperties;
     }, [config, responsiveHeight, responsiveWidth, isVisible]);
 
     const { hoverIntensity, animated, onAnimationComplete, duration } = config;
