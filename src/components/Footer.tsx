@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="text-2xl font-bold gradient-text mb-3">Valaithalam</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-3">JM&L</h3>
             <p className="text-sm text-neutral-400 leading-relaxed">
               Digital Excellence, Delivered.
             </p>
@@ -63,13 +63,13 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-neutral-400">
               <li>
-                <a href="mailto:contact@valaithalam.site" className="hover:text-primary transition-colors duration-300">
-                  contact@valaithalam.site
+                <a href="mailto:jailokdigitals@gmail.com" className="hover:text-primary transition-colors duration-300">
+                  jailokdigitals@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+15551234567" className="hover:text-primary transition-colors duration-300">
-                  +1 (555) 123-4567
+                <a href="tel:+919487739484" className="hover:text-primary transition-colors duration-300">
+                  +91 94877 39484
                 </a>
               </li>
             </ul>
@@ -116,7 +116,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-neutral-500 order-1 md:order-2">
-            &copy; {currentYear} Valaithalam. All rights reserved.
+            &copy; {currentYear} JM&L. All rights reserved.
           </p>
         </div>
       </div>

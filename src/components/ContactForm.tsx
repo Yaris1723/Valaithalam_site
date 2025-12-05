@@ -125,10 +125,10 @@ const ContactForm = () => {
               {status.message && (
                 <div
                   className={`p-4 rounded-lg text-center font-medium ${status.type === 'success'
-                      ? 'bg-green-50 text-green-800 border border-green-200'
-                      : status.type === 'error'
-                        ? 'bg-red-50 text-red-800 border border-red-200'
-                        : 'bg-blue-50 text-blue-800 border border-blue-200'
+                    ? 'bg-green-50 text-green-800 border border-green-200'
+                    : status.type === 'error'
+                      ? 'bg-red-50 text-red-800 border border-red-200'
+                      : 'bg-blue-50 text-blue-800 border border-blue-200'
                     }`}
                 >
                   {status.message}
@@ -153,8 +153,8 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">Email</div>
-                  <a href="mailto:contact@valaithalam.site" className="text-lg font-medium text-neutral-900 hover:text-primary transition-colors">
-                    contact@valaithalam.site
+                  <a href="mailto:jailokdigitals@gmail.com" className="text-lg font-medium text-neutral-900 hover:text-primary transition-colors">
+                    jailokdigitals@gmail.com
                   </a>
                 </div>
               </div>
@@ -165,8 +165,8 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">Phone</div>
-                  <a href="tel:+15551234567" className="text-lg font-medium text-neutral-900 hover:text-primary transition-colors">
-                    +1 (555) 123-4567
+                  <a href="tel:+919487739484" className="text-lg font-medium text-neutral-900 hover:text-primary transition-colors">
+                    +91 94877 39484
                   </a>
                 </div>
               </div>
