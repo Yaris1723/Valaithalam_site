@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Code, Briefcase, FolderOpen, Mail, Sparkles } from 'lucide-react';
+import { ArrowRight, Code, Briefcase, FolderOpen, Mail } from 'lucide-react';
 import SpotlightCard from '@/components/ui/SpotlightCard';
+import ParallaxSection from '@/components/ui/ParallaxSection';
 
 const Hero = () => {
   const pageCards = [
@@ -31,19 +32,25 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-primary-50/30 to-white pt-24 pb-16">
-      {/* Animated Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-primary-50/30 to-white pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
+      {/* Animated Background Elements with Parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-end/5 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite_2s]" />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/3 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite_1s]" />
+        <ParallaxSection speed={0.3}>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-primary/5 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite]" />
+        </ParallaxSection>
+        <ParallaxSection speed={0.5}>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-gradient-end/5 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite_2s]" />
+        </ParallaxSection>
+        <ParallaxSection speed={0.4}>
+          <div className="absolute top-1/2 left-1/2 w-48 h-48 md:w-64 md:h-64 bg-primary/3 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite_1s]" />
+        </ParallaxSection>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-        {/* Main Heading */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 w-full">
+        {/* Main Heading - Responsive Text Sizes */}
         <h1
-          className="text-center text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 leading-tight opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]"
+          className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-neutral-900 leading-tight opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]"
           style={{ animationFillMode: 'forwards' }}
         >
           Propelling Your Business with{' '}
@@ -53,18 +60,18 @@ const Hero = () => {
           Web & Social Strategies
         </h1>
 
-        {/* Subtitle */}
+        {/* Subtitle - Responsive Text */}
         <p
-          className="mt-6 text-center max-w-3xl mx-auto text-lg md:text-xl text-neutral-600 leading-relaxed opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]"
+          className="mt-4 md:mt-6 text-center max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-neutral-600 leading-relaxed opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards] px-4"
           style={{ animationFillMode: 'forwards' }}
         >
           We architect and execute robust full-stack applications, dynamic web experiences,
           and engaging social media campaigns that drive growth and deliver measurable results.
         </p>
 
-        {/* Quick Navigation Cards */}
+        {/* Quick Navigation Cards - Responsive Grid */}
         <div
-          className="mt-16 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]"
+          className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]"
           style={{ animationFillMode: 'forwards' }}
         >
           {pageCards.map((card, index) => {
@@ -73,6 +80,7 @@ const Hero = () => {
               <Link
                 key={card.title}
                 href={card.link}
+                className="touch-target"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${0.8 + index * 0.1}s forwards`,
                   opacity: 0,
@@ -80,7 +88,7 @@ const Hero = () => {
                 }}
               >
                 <SpotlightCard
-                  className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border border-neutral-100 hover:border-transparent transition-all duration-500 hover:-translate-y-2"
+                  className="group bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl border border-neutral-100 hover:border-transparent transition-all duration-500 hover:-translate-y-2 h-full"
                   spotlightColor="rgba(0, 123, 255, 0.15)"
                 >
                   {/* Gradient overlay on hover */}
@@ -93,7 +101,7 @@ const Hero = () => {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors duration-300">
                       {card.title}
                     </h3>
                     <p className="text-neutral-600 text-sm leading-relaxed mb-4">
@@ -112,14 +120,14 @@ const Hero = () => {
           })}
         </div>
 
-        {/* Primary CTA */}
+        {/* Primary CTA - Responsive Buttons */}
         <div
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-[fadeInUp_0.8s_ease-out_1s_forwards]"
+          className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 opacity-0 animate-[fadeInUp_0.8s_ease-out_1s_forwards] px-4"
           style={{ animationFillMode: 'forwards' }}
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center justify-center bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all duration-300"
+            className="group inline-flex items-center justify-center bg-primary text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto touch-target"
           >
             <Code className="mr-2 h-5 w-5" />
             Start Your Project
@@ -128,14 +136,14 @@ const Hero = () => {
 
           <Link
             href="/portfolio"
-            className="inline-flex items-center justify-center border-2 border-neutral-300 text-neutral-700 font-semibold px-8 py-4 rounded-full hover:border-primary hover:text-primary hover:bg-primary-50/50 transition-all duration-300"
+            className="inline-flex items-center justify-center border-2 border-neutral-300 text-neutral-700 font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full hover:border-primary hover:text-primary hover:bg-primary-50/50 transition-all duration-300 w-full sm:w-auto touch-target"
           >
             View Success Stories
           </Link>
         </div>
 
-        {/* Subtle Scroll Indicator */}
-        <div className="mt-16 opacity-0 animate-[fadeIn_0.8s_ease-out_1.2s_forwards]" style={{ animationFillMode: 'forwards' }}>
+        {/* Subtle Scroll Indicator - Hidden on Mobile */}
+        <div className="mt-12 md:mt-16 opacity-0 animate-[fadeIn_0.8s_ease-out_1.2s_forwards] hidden md:block" style={{ animationFillMode: 'forwards' }}>
           <div className="flex flex-col items-center gap-2 text-neutral-400">
             <span className="text-sm font-medium">Scroll to learn more</span>
             <div className="w-6 h-10 border-2 border-neutral-300 rounded-full flex items-start justify-center p-2">

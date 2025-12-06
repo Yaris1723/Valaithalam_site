@@ -14,7 +14,7 @@
   --color-primary-200: #99cfff;
   --color-primary-600: #0056b3;
   --color-primary-700: #004494;
-  
+
   /* Neutral Palette for Minimalist Design */
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f5f5f5;
@@ -26,11 +26,11 @@
   --color-neutral-700: #404040;
   --color-neutral-800: #262626;
   --color-neutral-900: #171717;
-  
+
   /* Gradient Colors */
   --color-gradient-start: #007BFF;
   --color-gradient-end: #00C6FF;
-  
+
   /* Semantic Colors */
   --color-success: #10b981;
   --color-error: #ef4444;
@@ -175,6 +175,7 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -186,6 +187,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -197,6 +199,7 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -208,6 +211,7 @@ html {
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -219,6 +223,7 @@ html {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -226,18 +231,24 @@ html {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
 
 @keyframes pulse-subtle {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.8;
   }
@@ -248,33 +259,39 @@ html {
   0% {
     transform: translateX(-50%) translateY(-10%);
   }
+
   50% {
     transform: translateX(50%) translateY(10%);
   }
+
   100% {
     transform: translateX(-50%) translateY(-10%);
   }
 }
- 
+
 @keyframes moveInCircle {
   0% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(180deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
- 
+
 @keyframes moveVertical {
   0% {
     transform: translateY(-50%);
   }
+
   50% {
     transform: translateY(50%);
   }
+
   100% {
     transform: translateY(-50%);
   }
@@ -283,6 +300,76 @@ html {
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes tilt {
+
+  0%,
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+
+  25% {
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+  }
+
+  75% {
+    transform: perspective(1000px) rotateX(-2deg) rotateY(-2deg);
+  }
+}
+
+@keyframes counterUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -364,4 +451,37 @@ html {
   outline: 2px solid #007BFF;
   outline-offset: 2px;
   border-radius: 0.25rem;
+}
+
+/* Responsive Utility Classes */
+.mobile-only {
+  @apply block md:hidden;
+}
+
+.tablet-only {
+  @apply hidden md:block lg:hidden;
+}
+
+.desktop-only {
+  @apply hidden lg:block;
+}
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
