@@ -81,14 +81,8 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center justify-between w-full">
-            {/* Mobile Logo */}
-            <Link href="/">
-              <span className="text-base font-bold bg-gradient-to-r from-primary to-gradient-end bg-clip-text text-transparent">
-                Valaidhalam
-              </span>
-            </Link>
-
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center justify-start w-full">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-full text-neutral-700 hover:bg-white/50 transition-all duration-300 hover:scale-110"
