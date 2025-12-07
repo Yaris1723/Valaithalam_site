@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Brand */}
           <ScrollReveal animation="fade-up" delay={0.1}>
             <div className="sm:col-span-2 md:col-span-1">
-              <h3 className="text-2xl font-bold gradient-text mb-3">JM&L</h3>
+              <h3 className="text-2xl font-bold gradient-text mb-3">Valaidhalam</h3>
               <p className="text-sm text-neutral-400 leading-relaxed">
                 Digital Excellence, Delivered.
               </p>
@@ -131,7 +131,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <p className="text-sm text-neutral-500 order-1 md:order-2">
-              &copy; {currentYear} JM&L. All rights reserved.
+              &copy; {currentYear} Valaidhalam. All rights reserved.
             </p>
           </div>
         </ScrollReveal>

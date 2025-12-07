@@ -51,7 +51,7 @@ const Navbar = () => {
               className="pr-4 border-r border-neutral-300/50 group"
             >
               <span className="text-lg font-bold bg-gradient-to-r from-primary to-gradient-end bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-                JM&L
+                Valaidhalam
               </span>
             </Link>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
             {/* Mobile Logo */}
             <Link href="/">
               <span className="text-base font-bold bg-gradient-to-r from-primary to-gradient-end bg-clip-text text-transparent">
-                JM&L
+                Valaidhalam
               </span>
             </Link>
 
