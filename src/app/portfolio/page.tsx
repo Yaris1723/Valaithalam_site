@@ -3,7 +3,7 @@ import Portfolio from '@/components/Portfolio';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Our Portfolio | Valaithalam',
+    title: 'Our Portfolio | Valaidhalam',
     description: 'Explore our successful projects and case studies showcasing our expertise in web development and digital solutions.',
 };
 

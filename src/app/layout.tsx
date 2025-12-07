@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 
 // Correct metadata without themeColor
 export const metadata: Metadata = {
-  title: "Valaithalam — Empowering Future Innovators & Leaders in Tamil Nadu",
-  description: "Valaithalam is a youth innovation and leadership ecosystem from Tamil Nadu empowering students with research, technology skilling, startup mentorship, and real-world projects.",
+  title: "Valaidhalam — Empowering Future Innovators & Leaders in Tamil Nadu",
+  description: "Valaidhalam is a youth innovation and leadership ecosystem from Tamil Nadu empowering students with research, technology skilling, startup mentorship, and real-world projects.",
   keywords: [
-    "Valaithalam",
+    "Valaidhalam",
     "youth innovation Tamil Nadu",
     "student leadership ecosystem",
     "student research Tamil Nadu",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     "campus innovation forum",
     "Tamil Nadu student ecosystem",
   ],
-  authors: [{ name: "Valaithalam" }],
+  authors: [{ name: "Valaidhalam" }],
   alternates: { canonical: "https://valaithalam.org/" },
   openGraph: {
-    title: "Valaithalam — Empowering Future Innovators & Leaders in Tamil Nadu",
+    title: "Valaidhalam — Empowering Future Innovators & Leaders in Tamil Nadu",
     description: "Youth innovation & leadership ecosystem empowering students in Tamil Nadu through research, tech training & startup mentorship.",
     url: "https://valaithalam.org/",
-    siteName: "Valaithalam",
+    siteName: "Valaidhalam",
     images: [
       {
         url: "https://valaithalam.org/og-image.png",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Valaithalam — Future Innovators of Tamil Nadu",
+    title: "Valaidhalam — Future Innovators of Tamil Nadu",
     description: "Shaping the next generation of innovators & leaders through research, tech skilling & entrepreneurship programs.",
     images: ["https://valaithalam.org/og-image.png"],
   },
@@ -63,7 +63,7 @@ export const viewport = {
 const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Valaithalam",
+  name: "Valaidhalam",
   url: "https://valaithalam.org/",
   logo: "https://valaithalam.org/logo.png",
   description: "Youth-driven innovation and leadership ecosystem in Tamil Nadu.",

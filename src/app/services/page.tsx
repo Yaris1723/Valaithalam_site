@@ -3,7 +3,7 @@ import ServicesOverview from '@/components/ServicesOverview';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Our Services | Valaithalam',
+    title: 'Our Services | Valaidhalam',
     description: 'Discover our comprehensive digital services including full-stack development, web applications, and social media management.',
 };
 

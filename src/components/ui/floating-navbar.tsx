@@ -31,13 +31,13 @@ export const FloatingNav = ({
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png" // <-- replace with your logo path
-            alt="Valaithalam Logo"
+            alt="Valaidhalam Logo"
             width={40}
-            height={40}
-            className="rounded-full"
+            className="h-8 w-auto"
+            priority
           />
-          <span className="text-xl font-bold text-primary tracking-wide">
-            Valaithalam
+          <span className="ml-2 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Valaidhalam
           </span>
         </Link>
 
