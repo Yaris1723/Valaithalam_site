@@ -33,7 +33,7 @@ const Navbar = () => {
     <>
       {/* Floating Navbar */}
       <nav
-        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+        className={`fixed md:left-1/2 md:-translate-x-1/2 left-4 z-50 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           } ${scrolled ? 'top-2 scale-[0.98]' : 'top-4 scale-100'}`}
         style={{
           animation: mounted ? 'fadeInDown 0.6s ease-out' : 'none'
